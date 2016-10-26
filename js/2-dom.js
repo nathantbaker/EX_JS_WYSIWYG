@@ -1,6 +1,10 @@
 
 console.log("(2) Dom.js loads");
 
+// Event Listeners
+var peopleElements = document.getElementsByClass("person-row");
+console.log("peopleElements:", peopleElements);
+
 //function that takes an array and convert it into html
 function makeItHtml (inputArray) {
   "use strict";
@@ -27,4 +31,8 @@ function makeItHtml (inputArray) {
   }
 
   return string;
+}
+
+function oddColorIt () {
+
 }

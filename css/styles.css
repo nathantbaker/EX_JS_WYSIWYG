@@ -69,6 +69,17 @@ bio {
   font-size: 1.5em;
 }
 
-/* ===HEADER=== */
+/* ===SWITCHES=== */
+
+.yellow {
+  background-color: lightyellow;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+
+
 /* ===SIDEBAR=== */
 /* ===FOOTER=== */
