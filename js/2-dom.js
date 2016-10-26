@@ -5,5 +5,26 @@ console.log("(2) Dom.js loads");
 function makeItHtml (inputArray) {
   "use strict";
   console.log("makeItHtml runs");
-  return `<h2>${inputArray[0].name}</h2>`;
+  var string = "";
+
+  for (var prop in inputArray) {
+    string +=
+      `<person class="person">
+        <div class="row person-row">
+          <div class="col-sm-4">
+            <image class="image">
+              <img src="${inputArray[prop].image}">
+            </image>
+          </div>
+          <div class="col-sm-8">
+              <name class="name">${inputArray[prop].name}</name>
+              <age class="age">${inputArray[prop].lifespan.birth} - ${inputArray[prop].lifespan.death}</age>
+              <bio class="bio">${inputArray[prop].bio}</bio>
+          </div>
+        </div>
+      </person>`
+    ;
+  }
+
+  return string;
 }

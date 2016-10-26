@@ -34,7 +34,9 @@ output {
 .person-row {
   background-color: white;
   padding: 20px 0;
-  border-radius: 5px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px #ccc;
 }
 
 img {
@@ -50,19 +52,21 @@ image {
 
 img, name, age, bio {
   display: block;
+  border-radius: 5px;
 }
 
 name {
-  font-size: 2em;
+  font-size: 3em;
+  line-height: 2em;
 }
 
 age {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: grey;
 }
 
 bio {
-  font-size: 1.4em;
+  font-size: 1.5em;
 }
 
 /* ===HEADER=== */
