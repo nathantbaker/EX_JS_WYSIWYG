@@ -1,0 +1,70 @@
+ /* ============================================================
+   Project: NSS Exercise
+   Author:  Nathan T. Baker
+   ============================================================ */
+
+/* ===GLOBAL=== */
+
+body {
+  background-color: #ddd;
+  min-width: 500px;
+}
+
+.container {
+  background-color: #f4f3ed;
+  border-radius: 0 0 10px 10px;
+  padding: 10px 20px 20px 20px;
+  border: #ccc 1px solid;
+  box-shadow: 1px 2px 5px #ccc;
+}
+
+input {
+  height: 40px;
+  font-size: 1.3em;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+output {
+  padding: 20px;
+}
+
+/* ===FAMOUS PEOPLE=== */
+
+.person-row {
+  background-color: white;
+  padding: 20px 0;
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+image {
+  margin: 0;
+  padding: 0;
+}
+
+img, name, age, bio {
+  display: block;
+}
+
+name {
+  font-size: 2em;
+}
+
+age {
+  font-size: 1.2em;
+  color: grey;
+}
+
+bio {
+  font-size: 1.4em;
+}
+
+/* ===HEADER=== */
+/* ===SIDEBAR=== */
+/* ===FOOTER=== */
