@@ -32,6 +32,16 @@ var Wysiwyg = (function() {
         birth: 1955,
         death: 2011
       }
+    },
+    {
+      title: "The",
+      name: "Britney Spears",
+      bio: "Britney Jean Spears is an American singer, dancer and actress. Born in McComb, Mississippi, and raised in Kentwood, Louisiana, she performed acting roles in stage productions and television shows as a child before signing with Jive Records in 1997.",
+      image: "http://i.forbesimg.com/media/lists/people/britney-spears_416x416.jpg",
+      lifespan: {
+        birth: 1981,
+        death: "current"
+      }
     }
   ];
 
