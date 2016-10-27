@@ -52,6 +52,9 @@ var Wysiwyg = (function() {
       console.log("showPeople method running");
       var targetElement = document.getElementById("output");
       targetElement.innerHTML = makeItHtml(famousPeople);
+    },
+    getNumberOfPeople: function() {
+      return famousPeople.length;
     }
   };
 
