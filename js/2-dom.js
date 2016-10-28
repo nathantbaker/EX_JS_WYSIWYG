@@ -4,7 +4,7 @@ console.log("(2) Dom.js loads");
 
 // Create Listeners
 
-function createListeners () {
+function createListeners() {
   var num = Wysiwyg.getNumberOfPeople(); //get number of people
 
   for (var i = 0; i < num; i++) {
@@ -22,12 +22,12 @@ function createListeners () {
 }
 
 // When you click on one of the person elements, a dotted border should appear around it.
-function showDots (targetElement) {
+function showDots(targetElement) {
   targetElement.currentTarget.style.border = "dotted red 4px";
 }
 
 //function that takes an array and convert it into html
-function makeItHtml (inputArray) {
+function makeItHtml(inputArray) {
   "use strict";
 
   console.log("makeItHtml runs");
