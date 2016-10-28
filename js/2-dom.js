@@ -1,21 +1,29 @@
 
 console.log("(2) Dom.js loads");
 
-// Event listeners are created after that
-var targetPerson = "";
-var num = Wysiwyg.getNumberOfPeople(); //get number of people
-for (var i = i; i < num; i++) {
-  targetPerson = "person-" + i;
-  console.log("targetPerson:", targetPerson);
-  document.getElementById(targetPerson).addEventListener("click", function(){
-    showDots(event);
-  });
+
+// Create Listeners
+
+function createListeners () {
+  var num = Wysiwyg.getNumberOfPeople(); //get number of people
+
+  for (var i = 0; i < num; i++) {
+    var targetPerson = "person-" + (i + 1);
+    console.log("targetPerson:", targetPerson);
+
+    var targetElement = document.getElementById(targetPerson);
+    console.log("targetElement:", targetElement);
+    targetElement.addEventListener("click", function() {
+      showDots(targetElement);
+    }
+
+    );
+  }
 }
 
 // When you click on one of the person elements, a dotted border should appear around it.
-function showDots (event) {
-  "use strict";
-  alert("You clicked it:", event);
+function showDots (targetElement) {
+  targetElement.currentTarget.style.border = "dotted red 4px";
 }
 
 //function that takes an array and convert it into html
