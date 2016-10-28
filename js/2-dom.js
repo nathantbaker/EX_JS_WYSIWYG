@@ -1,33 +1,26 @@
-
 console.log("(2) Dom.js loads");
 
 
 // Create Listeners
-
 function createListeners() {
   var num = Wysiwyg.getNumberOfPeople(); //get number of people
-
+  console.log("number of people:", num);
   for (var i = 0; i < num; i++) {
     var targetPerson = "person-" + (i + 1);
     console.log("targetPerson:", targetPerson);
-
     var targetElement = document.getElementById(targetPerson);
     console.log("targetElement:", targetElement);
-    targetElement.addEventListener("click", function() {
-      showDots(targetElement);
+    targetElement.addEventListener("click", showDots);
     }
-
-    );
-  }
 }
 
 // When you click on one of the person elements, a dotted border should appear around it.
-function showDots(targetElement) {
+function showDots (targetElement) {
   targetElement.currentTarget.style.border = "dotted red 4px";
 }
 
 //function that takes an array and convert it into html
-function makeItHtml(inputArray) {
+function makeItHtml (inputArray) {
   "use strict";
 
   console.log("makeItHtml runs");
