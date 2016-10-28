@@ -2,7 +2,7 @@ console.log("(2) Dom.js loads");
 
 
 // Create Listeners
-function createListeners () {
+function createListeners() {
   var num = Wysiwyg.getNumberOfPeople(); //get number of people
   console.log("number of people:", num);
   for (var i = 0; i < num; i++) {
