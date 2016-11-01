@@ -23,14 +23,15 @@ function clearDots() {
     }
 }
 
+function focusInput () {
+  document.getElementById("input").focus();
+}
+
 // When you click on one of the person elements, a dotted border should appear around it.
 function showDots (targetElement) {
   clearDots();
-  console.log("targetElement:", targetElement);
   targetElement.currentTarget.classList.add("dots");
-  // targetElement.div.classList.toggle("dots");
-
-
+  focusInput();
 }
 
 //function that takes an array and convert it into html
