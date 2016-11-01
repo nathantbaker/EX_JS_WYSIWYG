@@ -68,6 +68,10 @@ bio {
   font-size: 1.5em;
 }
 
+.dots {
+  border: dotted red 4px !important;
+}
+
 /* ===Alternating Rows=== */
 
 /*Each odd famous person element is blue, and even yellow*/

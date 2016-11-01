@@ -14,9 +14,23 @@ function createListeners() {
     }
 }
 
+function clearDots() {
+  var num = Wysiwyg.getNumberOfPeople(); //get number of people
+  for (var i = 0; i < num; i++) {
+    var targetPerson = "person-" + (i + 1);
+    var targetElement = document.getElementById(targetPerson);
+    targetElement.classList.remove("dots");
+    }
+}
+
 // When you click on one of the person elements, a dotted border should appear around it.
 function showDots (targetElement) {
-  targetElement.currentTarget.style.border = "dotted red 4px";
+  clearDots();
+  console.log("targetElement:", targetElement);
+  targetElement.currentTarget.classList.add("dots");
+  // targetElement.div.classList.toggle("dots");
+
+
 }
 
 //function that takes an array and convert it into html
