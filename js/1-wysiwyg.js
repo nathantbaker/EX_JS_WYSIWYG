@@ -1,7 +1,6 @@
-console.log("(1) wysiwyg.js loads");
-
 var Wysiwyg = (function() {
-  "use strict";
+"use strict";
+
   var famousPeople = [
     {
       title: "Samurai",
@@ -45,11 +44,8 @@ var Wysiwyg = (function() {
     }
   ];
 
-  console.log("Save people in memory:", famousPeople);
-
   return {
     showPeople: function() {
-      console.log("showPeople method running");
       var targetElement = document.getElementById("output");
       targetElement.innerHTML = makeItHtml(famousPeople);
     },

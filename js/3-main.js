@@ -1,4 +1,3 @@
-console.log("(3) main.js loads");
-
+"use strict";
 Wysiwyg.showPeople();
-createListeners(); //woo
+createListeners();
