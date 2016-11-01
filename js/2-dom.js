@@ -4,14 +4,17 @@ console.log("(2) Dom.js loads");
 // Create Listeners
 function createListeners() {
   var num = Wysiwyg.getNumberOfPeople(); //get number of people
-  console.log("number of people:", num);
+  // Listeners for each person
   for (var i = 0; i < num; i++) {
     var targetPerson = "person-" + (i + 1);
-    console.log("targetPerson:", targetPerson);
     var targetElement = document.getElementById(targetPerson);
-    console.log("targetElement:", targetElement);
     targetElement.addEventListener("click", showDots);
     }
+  // Listener for text input
+  let inputEl = document.getElementById("input");
+  inputEl.addEventListener("keyup", function() {
+    document.getElementsByClassName("dots")[0].getElementsByClassName("bio")[0].innerHTML = inputEl.value;
+  });
 }
 
 function clearDots() {
@@ -23,15 +26,12 @@ function clearDots() {
     }
 }
 
-function focusInput () {
-  document.getElementById("input").focus();
-}
-
 // When you click on one of the person elements, a dotted border should appear around it.
 function showDots (targetElement) {
   clearDots();
   targetElement.currentTarget.classList.add("dots");
-  focusInput();
+  document.getElementById("input").focus();
+  createListeners();
 }
 
 //function that takes an array and convert it into html
@@ -43,12 +43,15 @@ function makeItHtml (inputArray) {
   var string = "";
   var counter = 1;
 
+
+
+
   for (var prop in inputArray) {
     string +=`<div class="row person-row" id="person-`;
     string += counter; // add unique listener id to each person
     counter++; // increase counter
     string +=`">
-                <person class="person">
+               <person class="person">
                   <div class="col-sm-4">
                     <image class="image">
                       <img src="${inputArray[prop].image}">
@@ -57,13 +60,14 @@ function makeItHtml (inputArray) {
                   <div class="col-sm-8">
                       <name class="name">${inputArray[prop].title} ${inputArray[prop].name}</name>
                       <age class="age">${inputArray[prop].lifespan.birth} - ${inputArray[prop].lifespan.death}</age>
-                      <bio class="bio">${inputArray[prop].bio}</bio>
+                      <div class="bio">${inputArray[prop].bio}</div>
                   </div>
-                </person>
+               </person>
               </div>
             `
     ;
   }
+
 
   return string;
 }
