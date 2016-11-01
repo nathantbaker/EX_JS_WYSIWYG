@@ -1,30 +1,46 @@
-console.log("(2) Dom.js loads");
-
+"use strict";
 
 // Create Listeners
 function createListeners() {
+  var inputEl = document.getElementById("input");
   var num = Wysiwyg.getNumberOfPeople(); //get number of people
-  console.log("number of people:", num);
+
+  // Listeners for each person
   for (var i = 0; i < num; i++) {
     var targetPerson = "person-" + (i + 1);
-    console.log("targetPerson:", targetPerson);
     var targetElement = document.getElementById(targetPerson);
-    console.log("targetElement:", targetElement);
     targetElement.addEventListener("click", showDots);
+    }
+
+  // Listener for text input
+  inputEl.addEventListener("keyup", function(event) {
+    var targetEl = document.getElementsByClassName("dots")[0].getElementsByClassName("bio")[0];
+    targetEl.innerHTML = inputEl.value;
+    if (13 == event.keyCode) {
+      inputEl.value = "";
+    }
+  });
+}
+
+function clearDots() {
+  var num = Wysiwyg.getNumberOfPeople(); //get number of people
+  for (var i = 0; i < num; i++) {
+    var targetPerson = "person-" + (i + 1);
+    var targetElement = document.getElementById(targetPerson);
+    targetElement.classList.remove("dots");
     }
 }
 
 // When you click on one of the person elements, a dotted border should appear around it.
 function showDots (targetElement) {
-  targetElement.currentTarget.style.border = "dotted red 4px";
+  clearDots();
+  targetElement.currentTarget.classList.add("dots");
+  document.getElementById("input").focus();
+  createListeners();
 }
 
 //function that takes an array and convert it into html
 function makeItHtml (inputArray) {
-  "use strict";
-
-  console.log("makeItHtml runs");
-
   var string = "";
   var counter = 1;
 
@@ -33,7 +49,7 @@ function makeItHtml (inputArray) {
     string += counter; // add unique listener id to each person
     counter++; // increase counter
     string +=`">
-                <person class="person">
+               <person class="person">
                   <div class="col-sm-4">
                     <image class="image">
                       <img src="${inputArray[prop].image}">
@@ -42,9 +58,9 @@ function makeItHtml (inputArray) {
                   <div class="col-sm-8">
                       <name class="name">${inputArray[prop].title} ${inputArray[prop].name}</name>
                       <age class="age">${inputArray[prop].lifespan.birth} - ${inputArray[prop].lifespan.death}</age>
-                      <bio class="bio">${inputArray[prop].bio}</bio>
+                      <div class="bio">${inputArray[prop].bio}</div>
                   </div>
-                </person>
+               </person>
               </div>
             `
     ;

@@ -64,11 +64,13 @@ age {
   color: grey;
 }
 
-bio {
+.bio {
   font-size: 1.5em;
 }
 
-/* ===Alternating Rows=== */
+.dots {
+  border: dotted red 4px !important;
+}
 
 /*Each odd famous person element is blue, and even yellow*/
 
@@ -79,6 +81,3 @@ bio {
 .person-row:nth-child(even) {
     background-color: lightyellow;
 }
-
-/* ===SIDEBAR=== */
-/* ===FOOTER=== */
